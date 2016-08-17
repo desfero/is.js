@@ -14,3 +14,5 @@ before_install:
   - "npm set loglevel error"
   - "npm set progress false"
   - "npm i -g npm@\"^2.0.0\""
+script:
+  - "npm run test:phantom"
