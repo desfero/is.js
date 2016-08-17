@@ -937,15 +937,12 @@
 
         describe('is.dayLightSavingTime', function() {
             it('should return false if given date is not in daylight saving time', function() {
-                var time = 1421572235303;
-                var date = new Date(time);
+                var date = new Date("Sun Jan 18 2015 10:10:35 GMT+0100 (Central European Standard Time)");
                 expect(is.dayLightSavingTime(date)).to.be.false;
             });
             it('should return false if given date is in daylight saving time', function() {
-                var time = 1421572235303;
-                var date = new Date(time);
-                var sixMonthsAgo = new Date(date.setMonth(date.getMonth() - 6));
-                expect(is.dayLightSavingTime(sixMonthsAgo)).to.be.true;
+                var date = new Date("Fri Jul 18 2014 10:10:35 GMT+0200 (Central European Daylight Time)");
+                expect(is.dayLightSavingTime(date)).to.be.true;
             });
         });
         checkApi('dayLightSavingTime');
